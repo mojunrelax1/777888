@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>陌君拦截</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    /* 强制设置深色背景，防止被软件透明化 */
+    background-color: #050505 !important;
+    font-family: -apple-system, "PingFang SC", sans-serif;
+    color: #ffffff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  :root { --theme-color: #d4af37; }
+
+  /* 容器，专门用来限制尺寸 */
+  .container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at center, #111 0%, #000 100%);
+  }
+
+  /* 高级流光文字动画 (纯 CSS) */
+  .hero-title {
+    font-size: clamp(28px, 6vw, 42px);
+    font-weight: 800;
+    letter-spacing: 6px;
+    font-family: "Times New Roman", "Songti SC", serif;
+    background: linear-gradient(90deg, #b8955c, #fff8d6, #b8955c, #fff8d6, #b8955c);
+    background-size: 300% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shine 3s linear infinite;
+    margin-bottom: 20px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s ease forwards 0.5s, shine 3s linear infinite 1.5s;
+    z-index: 10;
+  }
+
+  /* 玻璃卡片 (纯 CSS) */
+  .glass-card {
+    background: rgba(30, 30, 30, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8), inset 0 1px 1px rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 25px 30px;
+    text-align: center;
+    width: 90%;
+    max-width: 340px;
+    opacity: 0;
+    transform: translateY(20px);
+    /* 延迟 1.5 秒出现，模拟粒子汇聚的时间 */
+    animation: fadeUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 1.5s;
+    z-index: 10;
+  }
+
+  /* 内部元素 */
+  .avatar {
+    width: 60px; height: 60px; margin: 0 auto 15px; border-radius: 50%;
+    background: rgba(0,0,0,0.5); border: 1px solid var(--theme-color);
+    display: flex; justify-content: center; align-items: center;
+    font-size: 24px; color: var(--theme-color);
+  }
+  .card-title { font-size: 18px; font-weight: bold; margin-bottom: 8px; color: #fff; }
+  .card-desc { font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 15px; }
+  
+  .info-item { margin-bottom: 12px; }
+  .info-label { color: rgba(255,255,255,0.4); font-size: 12px; display: block; }
+  .info-val { color: var(--theme-color); font-weight: bold; font-size: 14px; line-height: 1.5; }
+  
+  .channel {
+    display: inline-block; font-size: 12px; font-weight: bold; color: var(--theme-color);
+    padding: 6px 16px; border-radius: 20px; background: rgba(212, 175, 55, 0.1);
+    border: 1px solid var(--theme-color); margin-top: 10px;
+  }
+
+  @keyframes shine {
+    to { background-position: 300% center; }
+  }
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="hero-title">陌君拦截</div>
+
+  <div class="glass-card">
+    <div class="avatar">👤</div>
+    <div class="card-title">陌君拦截</div>
+    <div class="card-desc">纯净网络 · 极致体验</div>
+    
+    <div class="info-item">
+      <span class="info-label">核心功能</span>
+      <span class="info-val">完美拦截上报下发<br>为您保驾护航</span>
+    </div>
+    
+    <div class="channel">@MOJNBYYDS666</div>
+  </div>
+</div>
+
+</body>
+</html>
